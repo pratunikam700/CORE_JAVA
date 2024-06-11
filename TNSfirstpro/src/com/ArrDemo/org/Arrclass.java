@@ -16,6 +16,6 @@ public class Arrclass {
 		 for(int i=0;i<arr.length;i++) {
 		    	System.out.println("Elements are:" +arr[i]);
 		    }
-		 System.out.println(s1);
+		 System.out.println("elements at location :"+s1);
 	}
 }
