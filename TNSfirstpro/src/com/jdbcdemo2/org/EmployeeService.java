@@ -37,18 +37,31 @@ public class EmployeeService implements IEmployeeService{
 	@Override
 	public Employee getEmpployeeById(int empId) {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
-	public void addEmployee(Employee e) {
+	public void addEmployee(Employee e) throws SQLException{
 		// TODO Auto-generated method stub
-		
+		String query="INSERT INTO employee VALUES(3,'Pooja',5600,'tranie')";
+		pst=cn.prepareStatement("INSERT INTO employee VALUES(?,?,?,?)");
+		pst.setInt(1,e.getEmpId());
+		pst.setString(2,e.getEmpName());
+		pst.setFloat(3,e.getSalary());
+		pst.setString(4,e.getPost());
+		int n=pst.executeUpdate();
+		if(n>0)
+			System.out.println("Record inserted successully!!");
 	}
 
 	@Override
-	public boolean deleteEmployee(int empId) {
+	public boolean deleteEmployee(int empId) throws SQLException {
 		// TODO Auto-generated method stub
+		pst=cn.prepareStatement("DELETE FROM employee where empid=?");
+		pst.setInt(1, empId);
+		int n=pst.executeUpdate();
+		
 		return false;
 	}
 

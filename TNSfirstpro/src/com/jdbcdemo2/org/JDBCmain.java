@@ -13,6 +13,13 @@ public class JDBCmain {
 				EmployeeService service=new EmployeeService();
 				empList= service.getAllEmployees();
 				System.out.println(empList);
+				
+//				Employee e=new Employee(4,"vidhya",50000,"Manager");
+//				service.addEmployee(e);
+				if(service)
+				System.out.println("--------------------------");
+				empList=service.getAllEmployees();
+				System.out.println(empList);
 			
 		} catch ( SQLException  | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
